@@ -1,0 +1,125 @@
+*{
+  margin: 0; padding: 0; box-sizing: border-box;
+}
+:root{
+  font-size: 10px;
+  --fnt-fmly: 'Roboto', sans-serif;
+  --color-light: hsl(0, 0%, 100%);
+  --color-dark: hsl(var(--hue), 5%, 7%);
+  --hue: 240;
+  --bg-button-light: hsl(var(--hue), 9%, 89%);
+  --bg-button-dark: hsl(var(--hue), 6%, 17%);
+  --bg-rain-hover: hsl(180, 97%, 31%);
+  --bg-florest-hover: hsl(138, 97%, 31%);
+  --bg-fire-hover: hsl(350, 97%, 31%);
+  --bg-street-hover: hsl(46, 97%, 31%);
+  --font-color: hsl(var(--hue), 6%, 21%);
+
+}
+body{
+  min-height: 100vh; min-width: 100vh; display: grid; align-items: start;
+  background: var(--color-light);
+}
+.hide{
+  display: none;
+}
+
+
+header{
+  max-height: 44px; justify-self: right;
+}
+.sun, .moon{
+  margin-right: 6rem; margin-top: 6rem;
+}
+.moon svg path{
+  fill: var(--color-light);
+}
+header button{
+  background: transparent; border: none; cursor: pointer;
+}
+.dark{
+  background: var(--color-dark);
+  fill: var(--color-light);
+  color: var(--color-light);
+}
+
+/*main*/
+main{
+  display: flex; flex-direction: row; align-items: center; justify-content: center;
+  gap: 19.2rem;
+}
+span{
+  font-family: var(--fnt-fmly); font-size: 12.7rem; color: var(--font-color);
+}
+span .dark{
+  font-family: var(--fnt-fmly); font-size: 12.7rem; color: var(--color-light);
+}
+.options button{
+  background: transparent; border: none; cursor: pointer;
+}
+.clock{
+  display: flex; flex-direction: column; gap: 4.8rem;
+}
+
+/*buttons*/
+.options{
+  display: flex; gap: 4rem;
+}
+.themes{
+  display: grid; grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(1, 1fr);
+  gap: 3.2rem;
+}
+.darken{
+  background: var(--bg-button-dark); border: none; border-radius: 2.4rem; padding: 4.8rem; cursor: pointer;
+}
+.light{
+  background: var(--bg-button-light); border: none; border-radius: 2.4rem; padding: 4.8rem; cursor: pointer;
+}
+path{
+  fill: var(--color-dark);
+}
+path .dark{
+  fill: var(--color-light);
+}
+button{
+  transition: 100ms;
+}
+.sliderlight input[type="range"]{
+  width: 9rem; height: 4px; margin-top: 3.8rem;
+  appearance: none; background: transparent; cursor: pointer;
+  background: #FFF; border-radius: 9999px;
+}
+.sliderlight input::-webkit-slider-thumb{
+  appearance: none; cursor: pointer;
+  background: #FFF; width: 1.6rem; height: 1.6rem; border-radius: 9999px;
+}
+.sliderdark input[type="range"]{
+  width: 9rem; height: 4px; margin-top: 3.8rem;
+  appearance: none; background: transparent; cursor: pointer;
+  background: hsla(240, 6%, 21%, 1); border-radius: 9999px;
+}
+.sliderdark input::-webkit-slider-thumb{
+  appearance: none; cursor: pointer; border-radius: 9999px;
+  background: hsla(240, 6%, 21%, 1); width: 1.6rem; height: 1.6rem; 
+}
+.sliderlight input::-webkit-slider-thumb:hover{
+  transform: scale(1.08);
+}
+button:hover{
+  transform: scale(1.02);
+}
+.themes button:hover svg path{
+  fill: var(--color-light);
+}
+.rain:hover{
+  background: var(--bg-rain-hover);
+}
+.florest:hover{
+  background: var(--bg-florest-hover);
+}
+.fire:hover{
+  background: var(--bg-fire-hover);
+}
+.coffee:hover{
+  background: var(--bg-street-hover);
+}
